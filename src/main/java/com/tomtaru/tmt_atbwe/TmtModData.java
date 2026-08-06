@@ -1,6 +1,15 @@
 package com.tomtaru.tmt_atbwe;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
+
+import java.util.List;
+import java.util.Objects;
 
 public class TmtModData {
 
@@ -8,6 +17,7 @@ public class TmtModData {
         public static final ModPedia ATBWG  = new ModPedia("biomeswevegone", "All The Biomes We've Gone");
         public static final ModPedia IE     = new ModPedia("immersiveengineering", "Immersive Engineering");
         public static final ModPedia FD     = new ModPedia("farmersdelight", "Farmer's Delight");
+        public static final ModPedia C      = new ModPedia("c", "Common");
 
         public ResourceLocation id(String path) {
             return ResourceLocation.fromNamespaceAndPath(this.modid, path);
@@ -40,10 +50,18 @@ public class TmtModData {
         public static final TreePedia WILLOW                = new TreePedia("willow");
         public static final TreePedia WITCH_HAZEL           = new TreePedia("witch_hazel");
         public static final TreePedia ZELKOVA               = new TreePedia("zelkova");
-        public static final TreePedia PALO_VERDE            = new TreePedia("palo_verde");
+
+        public static final List<TreePedia> TREEPEDIA = List.of(
+                ASPEN, BAOBAB, BLUE_ENCHANTED, CIKA, CYPRESS, EBONY, FIR, FLORUS, GREEN_ENCHANTED, HOLLY, IRONWOOD,
+                JACARANDA, MAHOGANY, MAPLE, PALM, PINE, RAINBOW_EUCALYPTUS, REDWOOD, SAKURA, SKYRIS, SPIRIT,
+                WHITE_MANGROVE, WILLOW, WITCH_HAZEL, ZELKOVA
+        );
 
         public ResourceLocation log() {
-            return ModPedia.ATBWG.id(this.treeType + "_log");
+            if (!this.treeType.equals("florus")) {
+                return ModPedia.ATBWG.id(this.treeType + "_log");
+            }
+            else  return ModPedia.ATBWG.id(this.treeType + "_stem");
         }
 
         public ResourceLocation wood() {
@@ -51,7 +69,10 @@ public class TmtModData {
         }
 
         public ResourceLocation strippedLog() {
-            return ModPedia.ATBWG.id("stripped_" + this.treeType + "_log");
+            if (!this.treeType.equals("florus")) {
+                return ModPedia.ATBWG.id("stripped_" + this.treeType + "_log");
+            }
+            else  return ModPedia.ATBWG.id("stripped_" + this.treeType + "_stem");
         }
 
         public ResourceLocation strippedWood() {
@@ -124,6 +145,15 @@ public class TmtModData {
 
         public ResourceLocation chestBoat() {
             return ModPedia.ATBWG.id(this.treeType + "_chest_boat");
+        }
+
+        public Holder<Item> getItemHolder(ResourceLocation id) {
+            ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, id);
+            return BuiltInRegistries.ITEM.getHolderOrThrow(key);
+        }
+
+        public Ingredient ingredient(ResourceLocation id) {
+            return Ingredient.of(getItemHolder(id).value());
         }
     }
 }
