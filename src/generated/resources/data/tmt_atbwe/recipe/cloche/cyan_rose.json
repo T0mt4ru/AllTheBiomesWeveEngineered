@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:cyan_rose"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:cyan_rose"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:cyan_rose"
+    }
+  ],
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "time": 1600
+}

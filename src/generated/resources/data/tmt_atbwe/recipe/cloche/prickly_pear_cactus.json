@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:prickly_pear_cactus"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:prickly_pear_cactus"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:prickly_pear_cactus"
+    }
+  ],
+  "soil": {
+    "tag": "c:sands"
+  },
+  "time": 1600
+}

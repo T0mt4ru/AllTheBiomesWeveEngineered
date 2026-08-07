@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:shelf_fungi"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:shelf_fungi"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:shelf_fungi"
+    }
+  ],
+  "soil": {
+    "item": "minecraft:mycelium"
+  },
+  "time": 1600
+}

@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:blue_sage"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:blue_sage"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:blue_sage"
+    }
+  ],
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "time": 1600
+}

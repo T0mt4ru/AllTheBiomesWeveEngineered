@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:cattail_sprout"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:cattail_sprout"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:cattail_sprout"
+    }
+  ],
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "time": 1600
+}

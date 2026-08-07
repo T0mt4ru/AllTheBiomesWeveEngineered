@@ -1,0 +1,23 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:blue_glowcane_shoot"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "minecraft:air"
+  },
+  "results": [
+    {
+      "count": 3,
+      "id": "biomeswevegone:blue_glowcane_shoot"
+    }
+  ],
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "time": 1600
+}

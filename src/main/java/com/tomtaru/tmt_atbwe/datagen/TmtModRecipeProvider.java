@@ -20,7 +20,7 @@ public class TmtModRecipeProvider extends RecipeProvider {
         //FermenterRecipes.build(output);
         //MixerRecipes.build(output);
         //BottlingMachineRecipes.build(output);
-        //ClocheRecipes.build(output);
+        TmtClocheRecipes.build(output);
         //CrusherRecipes.build(output);
         //MetalPressRecipes.build(output);
         TmtSawmillRecipes.build(output);

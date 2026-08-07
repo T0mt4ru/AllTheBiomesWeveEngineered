@@ -1,0 +1,22 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:flowering_barrel_cactus"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:flowering_barrel_cactus"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:flowering_barrel_cactus"
+    }
+  ],
+  "soil": {
+    "tag": "c:sands"
+  },
+  "time": 1600
+}
