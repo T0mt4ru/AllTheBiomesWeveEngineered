@@ -1,0 +1,15 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": {
+    "item": "biomeswevegone:redwood_door"
+  },
+  "result": {
+    "item": "biomeswevegone:redwood_planks"
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    }
+  ]
+}

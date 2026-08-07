@@ -1,0 +1,24 @@
+{
+  "type": "immersiveengineering:sawmill",
+  "energy": 1600,
+  "input": {
+    "item": "biomeswevegone:white_mangrove_bookshelf"
+  },
+  "result": {
+    "basePredicate": {
+      "item": "biomeswevegone:white_mangrove_planks"
+    },
+    "count": 4
+  },
+  "secondaryOutputs": [
+    {
+      "tag": "c:dusts/wood"
+    },
+    {
+      "basePredicate": {
+        "tag": "minecraft:book"
+      },
+      "count": 3
+    }
+  ]
+}

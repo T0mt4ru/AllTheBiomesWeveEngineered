@@ -12,22 +12,91 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.crafting.Ingredient;
 
+import java.util.List;
+
 
 public class TmtSawmillRecipes {
 
     public static void build(RecipeOutput output) {
         var energyStandard = 1600;
+        var dustTag = new TagOutputList(new TagOutput(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(TmtModData.ModPedia.C.modid(), "dusts/wood"))));
 
-        for(TmtModData.TreePedia tree : TmtModData.TreePedia.TREEPEDIA) {
+        for(TmtModData.TreePedia treeType : TmtModData.TreePedia.TREEPEDIA) {
 
             generateSawmillRecipe(output,
-                    tree.ingredient(tree.log()),
+                    treeType.getIngredient(treeType.log()),
                     energyStandard,
-                    new TagOutput(new IngredientWithSize(tree.ingredient(tree.strippedLog()), 1)),
-                    new TagOutputList(new TagOutput(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(TmtModData.ModPedia.C.modid(), "dusts/wood")))),
-                    new TagOutput(new IngredientWithSize(tree.ingredient(tree.planks()), 6)),
-                    new TagOutputList(new TagOutput(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(TmtModData.ModPedia.C.modid(), "dusts/wood")))),
-                    tree.log().getPath());
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.strippedLog()), 1)),
+                    dustTag,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.planks()), 6)),
+                    dustTag,
+                    treeType.log().getPath());
+
+            generateSawmillRecipe(output,
+                    treeType.getIngredient(treeType.wood()),
+                    energyStandard,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.strippedWood()), 1)),
+                    dustTag,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.planks()), 6)),
+                    dustTag,
+                    treeType.wood().getPath());
+
+            generateSawmillRecipe(output,
+                    treeType.getIngredient(treeType.strippedLog()),
+                    energyStandard,
+                    TagOutput.EMPTY,
+                    TagOutputList.EMPTY,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.planks()), 6)),
+                    dustTag,
+                    treeType.strippedLog().getPath());
+
+            generateSawmillRecipe(output,
+                    treeType.getIngredient(treeType.strippedWood()),
+                    energyStandard,
+                    TagOutput.EMPTY,
+                    TagOutputList.EMPTY,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.planks()), 6)),
+                    dustTag,
+                    treeType.strippedWood().getPath());
+
+            generateSawmillRecipe(output,
+                    treeType.getIngredient(treeType.planks()),
+                    energyStandard,
+                    TagOutput.EMPTY,
+                    TagOutputList.EMPTY,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.slab()), 2)),
+                    dustTag,
+                    treeType.planks().getPath());
+
+            generateSawmillRecipe(output,
+                    treeType.getIngredient(treeType.stairs()),
+                    energyStandard,
+                    TagOutput.EMPTY,
+                    TagOutputList.EMPTY,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.planks()), 1)),
+                    dustTag,
+                    treeType.stairs().getPath());
+
+            generateSawmillRecipe(output,
+                    treeType.getIngredient(treeType.door()),
+                    energyStandard,
+                    TagOutput.EMPTY,
+                    TagOutputList.EMPTY,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.planks()),1)),
+                    dustTag,
+                    treeType.door().getPath());
+
+            generateSawmillRecipe(output,
+                    treeType.getIngredient(treeType.bookshelf()),
+                    energyStandard,
+                    TagOutput.EMPTY,
+                    TagOutputList.EMPTY,
+                    new TagOutput(new IngredientWithSize(treeType.getIngredient(treeType.planks()), 4)),
+                    new TagOutputList(List.of(
+                            new TagOutput(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(TmtModData.ModPedia.C.modid(), "dusts/wood"))),
+                            new TagOutput(new IngredientWithSize(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(TmtModData.ModPedia.MC.modid(), "book")), 3))
+                    )),
+                    treeType.bookshelf().getPath());
         }
 
     }

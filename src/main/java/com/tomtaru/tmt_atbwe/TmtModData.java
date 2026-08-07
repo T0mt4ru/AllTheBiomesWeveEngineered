@@ -9,15 +9,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.List;
-import java.util.Objects;
 
 public class TmtModData {
 
     public record ModPedia(String modid, String modName) {
         public static final ModPedia ATBWG  = new ModPedia("biomeswevegone", "All The Biomes We've Gone");
-        public static final ModPedia IE     = new ModPedia("immersiveengineering", "Immersive Engineering");
-        public static final ModPedia FD     = new ModPedia("farmersdelight", "Farmer's Delight");
         public static final ModPedia C      = new ModPedia("c", "Common");
+        public static final ModPedia FD     = new ModPedia("farmersdelight", "Farmer's Delight");
+        public static final ModPedia IE     = new ModPedia("immersiveengineering", "Immersive Engineering");
+        public static final ModPedia MC     = new ModPedia("minecraft", "Minecraft");
 
         public ResourceLocation id(String path) {
             return ResourceLocation.fromNamespaceAndPath(this.modid, path);
@@ -152,7 +152,7 @@ public class TmtModData {
             return BuiltInRegistries.ITEM.getHolderOrThrow(key);
         }
 
-        public Ingredient ingredient(ResourceLocation id) {
+        public Ingredient getIngredient(ResourceLocation id) {
             return Ingredient.of(getItemHolder(id).value());
         }
     }
