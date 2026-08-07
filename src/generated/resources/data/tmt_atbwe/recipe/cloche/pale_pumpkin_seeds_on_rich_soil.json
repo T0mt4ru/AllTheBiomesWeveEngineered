@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:pale_pumpkin_seeds"
+  },
+  "render": {
+    "type": "immersiveengineering:stem",
+    "attachedStem": "minecraft:air",
+    "crop": "biomeswevegone:pale_pumpkin",
+    "stem": "biomeswevegone:pale_pumpkin_stem"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:pale_pumpkin"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_atbwe:compat/rich_soil"
+  },
+  "time": 800
+}

@@ -7,7 +7,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -313,6 +312,9 @@ public class TmtModData {
         public ResourceLocation cropRenderBlock() {
             if (this.herbType.equals("oddion_bulb")) {
                 return ModPedia.ATBWG.id("oddion_crop");
+            } else if (this.herbType.equals("blueberries")) {
+                return ModPedia.ATBWG.id("blueberry_bush");
+
             }
             return ModPedia.ATBWG.id(this.herbType);
         }
@@ -382,6 +384,13 @@ public class TmtModData {
                 case SWAMP ->
                         Ingredient.of(Items.WATER_BUCKET);
             };
+        }
+
+        public boolean worksOnRichSoil() {
+            return this.category == PlantCategory.FLOWER
+                    || this.category == PlantCategory.VEGETABLE
+                    || this.category == PlantCategory.PUMPKIN
+                    || this.category == PlantCategory.REED;
         }
     }
 }

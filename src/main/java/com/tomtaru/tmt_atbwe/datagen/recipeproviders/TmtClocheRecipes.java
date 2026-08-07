@@ -19,6 +19,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class TmtClocheRecipes {
@@ -38,9 +39,9 @@ public class TmtClocheRecipes {
 
 
 
-    private static void generateClocheRecipe(RecipeOutput clocheOutput, Ingredient seedItem, ResourceLocation cropOutput, int cropYield,
+    private static void generateClocheRecipe(RecipeOutput clocheOutput, RecipeOutput clocheFDOutput, Ingredient seedItem, ResourceLocation cropOutput, int cropYield,
                                              Ingredient soilItem, FluidIngredient fluidIngredient, int time,
-                                             ClocheRenderFunction clocheRenderFunction, String recipeName) {
+                                             ClocheRenderFunction clocheRenderFunction, String recipeName, boolean supportsRichSoil) {
 
         List<StackWithChance> outputs = List.of(
                 new StackWithChance(new TagOutput(BuiltInRegistries.ITEM.get(cropOutput), cropYield), chanceGuaranteed)
@@ -58,6 +59,24 @@ public class TmtClocheRecipes {
         ResourceLocation id = ResourceLocation.fromNamespaceAndPath(Tmt_atbweMain.MODID, "cloche/" + recipeName);
         clocheOutput.accept(id, recipe, null);
 
+        if (supportsRichSoil) {
+
+            ClocheRecipe fdRecipe = new ClocheRecipe(
+                    outputs,
+                    seedItem,
+                    Ingredient.of(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Tmt_atbweMain.MODID, "compat/rich_soil"))),
+                    time /2,
+                    fluidIngredient,
+                    clocheRenderFunction
+            );
+
+            ResourceLocation fdID = ResourceLocation.fromNamespaceAndPath(Tmt_atbweMain.MODID, "cloche/" + recipeName + "_on_rich_soil");
+            clocheFDOutput.accept(fdID, fdRecipe, null);
+
+        }
+
+
+
     }
 
 
@@ -68,7 +87,7 @@ public class TmtClocheRecipes {
 
         for (TmtModData.HerbaPedia herbType : TmtModData.HerbaPedia.HERBAPEDIA) {
 
-            generateClocheRecipe(output,
+            generateClocheRecipe(output, farmersdelightOutput,
                     herbType.getIngredient(herbType.seedItem()),
                     herbType.produceItem(),
                     herbType.getYield(),
@@ -76,10 +95,9 @@ public class TmtClocheRecipes {
                     fluidWater,
                     timeStandard,
                     herbType.getClocheRenderFunction(),
-                    herbType.seedItem().getPath()
-                    );
+                    herbType.seedItem().getPath(),
+                    herbType.worksOnRichSoil()
+            );
         }
-
-
     }
 }

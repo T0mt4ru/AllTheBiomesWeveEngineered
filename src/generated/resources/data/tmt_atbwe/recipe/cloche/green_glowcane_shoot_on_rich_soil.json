@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:green_glowcane_shoot"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "minecraft:air"
+  },
+  "results": [
+    {
+      "count": 3,
+      "id": "biomeswevegone:green_glowcane_shoot"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_atbwe:compat/rich_soil"
+  },
+  "time": 800
+}

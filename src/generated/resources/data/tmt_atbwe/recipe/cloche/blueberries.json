@@ -8,7 +8,7 @@
   },
   "render": {
     "type": "immersiveengineering:generic",
-    "block": "minecraft:air"
+    "block": "biomeswevegone:blueberry_bush"
   },
   "results": [
     {

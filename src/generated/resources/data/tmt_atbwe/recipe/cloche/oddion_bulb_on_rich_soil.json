@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:oddion_bulb"
+  },
+  "render": {
+    "type": "immersiveengineering:crop",
+    "block": "biomeswevegone:oddion_crop"
+  },
+  "results": [
+    {
+      "count": 3,
+      "id": "biomeswevegone:oddion_bulb"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_atbwe:compat/rich_soil"
+  },
+  "time": 800
+}

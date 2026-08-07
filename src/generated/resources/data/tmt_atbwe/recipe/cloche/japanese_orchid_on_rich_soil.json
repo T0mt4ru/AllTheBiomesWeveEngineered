@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:japanese_orchid"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:japanese_orchid"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:japanese_orchid"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_atbwe:compat/rich_soil"
+  },
+  "time": 800
+}

@@ -25,8 +25,8 @@ public class TmtModDataGenerators {
 
         generator.addProvider(event.includeServer(), new TmtModRecipeProvider(packOutput, lookupProvider));
         //generator.addProvider(event.includeServer(), new ModFluidTagsProvider(packOutput, lookupProvider, existingFileHelper));
-        //generator.addProvider(event.includeServer(), blockTagsProvider);
-        //generator.addProvider(event.includeServer(), new ModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), blockTagsProvider);
+        generator.addProvider(event.includeServer(), new TmtModItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         //generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
         //generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
     }
