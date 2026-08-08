@@ -1,0 +1,15 @@
+{
+  "type": "immersiveengineering:coke_oven",
+  "creosote": 1000,
+  "input": {
+    "basePredicate": {
+      "item": "biomeswevegone:peat"
+    },
+    "count": 8
+  },
+  "result": {
+    "count": 8,
+    "id": "minecraft:coal_block"
+  },
+  "time": 25600
+}
