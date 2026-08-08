@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:allium_flower_bush"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:allium_flower_bush"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:allium_flower_bush"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_otbwe:compat/rich_soil"
+  },
+  "time": 800
+}

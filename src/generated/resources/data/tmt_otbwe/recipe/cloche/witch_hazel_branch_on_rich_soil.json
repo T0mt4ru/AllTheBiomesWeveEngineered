@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:witch_hazel_branch"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:witch_hazel_branch"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:witch_hazel_branch"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_otbwe:compat/rich_soil"
+  },
+  "time": 800
+}

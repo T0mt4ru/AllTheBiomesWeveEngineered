@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:yellow_tulip"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:yellow_tulip"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:yellow_tulip"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_otbwe:compat/rich_soil"
+  },
+  "time": 800
+}

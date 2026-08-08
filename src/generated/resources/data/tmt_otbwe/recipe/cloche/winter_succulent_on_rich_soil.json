@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "farmersdelight"
+    }
+  ],
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:winter_succulent"
+  },
+  "render": {
+    "type": "immersiveengineering:generic",
+    "block": "biomeswevegone:winter_succulent"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:winter_succulent"
+    }
+  ],
+  "soil": {
+    "tag": "tmt_otbwe:compat/rich_soil"
+  },
+  "time": 800
+}

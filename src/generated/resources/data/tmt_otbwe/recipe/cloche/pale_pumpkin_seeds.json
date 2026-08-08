@@ -1,0 +1,24 @@
+{
+  "type": "immersiveengineering:cloche",
+  "fluid": {
+    "tag": "c:water"
+  },
+  "input": {
+    "item": "biomeswevegone:pale_pumpkin_seeds"
+  },
+  "render": {
+    "type": "immersiveengineering:stem",
+    "attachedStem": "biomeswevegone:attached_pale_pumpkin_stem",
+    "crop": "biomeswevegone:pale_pumpkin",
+    "stem": "biomeswevegone:pale_pumpkin_stem"
+  },
+  "results": [
+    {
+      "id": "biomeswevegone:pale_pumpkin"
+    }
+  ],
+  "soil": {
+    "item": "minecraft:dirt"
+  },
+  "time": 1600
+}
